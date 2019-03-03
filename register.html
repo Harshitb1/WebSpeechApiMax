@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SignIn</title>
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        />
+        <style>
+            video {
+                -webkit-transform: scaleX(-1);
+                transform: scaleX(-1);
+                margin-top: 15px;
+            }
+        </style>
+        <link rel="stylesheet" a="/formstyle.css" />
+    </head>
+    <body onload="init()">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <form action="/register" method="POST">
+                            <div class="container">
+                                <h3>Register</h3>
+                                <h6 class="card-subtitle mb-2 text-muted">
+                                    Create an account for MaxHealthcare
+                                </h6>
+                                <br />
+
+                                <input
+                                    class="input-block-level in"
+                                    id="1"
+                                    type="text"
+                                    name="name"
+                                    placeholder="Name"
+                                    onclick="speech(1)"
+                                /><br />
+                                <input
+                                    id="2"
+                                    class="input-block-level in"
+                                    type="Email"
+                                    name="username"
+                                    placeholder="Email"
+                                    onclick="speech(2)"
+
+                                /><br />
+                                <input
+                                    id="3"
+                                    class="input-block-level in"
+                                    type="password"
+                                    name="password"
+                                    placeholder="password"
+                                    onclick="speech(3)"
+
+                                /><br /> 
+                                <input
+                                    id="4"
+                                    class="input-block-level in"
+                                    type="text"
+                                    name="fname"
+                                    placeholder="Father's Name"
+                                    onclick="speech(4)"
+
+                                /><br />
+                                
+                                <input
+                                    id="5"
+                                    class="input-block-level in"
+                                    type="text"
+                                    name="address"
+                                    placeholder="Address"
+                                    onclick="speech(5)"
+
+                                /><br />
+                                <input
+                                    id="6"
+                                    class="input-block-level in"
+                                    type="number"
+                                    name="phone"
+                                    placeholder="Phone"
+                                    min="10"
+                                    onclick="speech(6)"
+
+                                /><br />
+                                <input
+                                    id="7"
+                                    class="input-block-level in"
+                                    type="text"
+                                    name="bloodg"
+                                    placeholder="Blood Group"
+                                    onclick="speech(7)"
+
+                                /><br />
+                                <input
+                                    id="8"
+                                    class="input-block-level in"
+                                    type="number"
+                                    name="uid"
+                                    placeholder="UID no."
+                                    onclick="speech(8)"
+
+                                /><br />
+
+                                <textarea
+                                    id="9"
+                                    placeholder="Enter previous record here"
+                                    rows="3"
+                                    cols="60"
+                                    class="md-textarea form-control in"
+                                    onclick="speech(9)"
+
+                                ></textarea
+                                ><br />
+
+
+                                <input
+                                    
+                                    class="input-block-level "
+                                    type="date"
+                                    name="dob"
+                                    placeholder="DOB DD/MM/YYYY"
+                                    
+
+                                /><br />
+                                <button
+                                    class="btn btn-primary btn-lg btn-block"
+                                    type="Submit"
+                                >
+                                    Sign Up
+                                </button>
+                                <br /><br />
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6">
+                                        <!-- adddddd -->
+                                        <!-- <h6><center><small>OR</small></center></h6>
+                            <h6 class="text-muted"><center><small>Sign in with</small></center></h6> -->
+                                    </div>
+                                    <div
+                                        class="col-lg-6 col-md-6 col-sm-6"
+                                    ></div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col" style="margin-top: 105px" onload="init();">
+                    <div class="row">
+                        <div class="col">
+                            <button
+                                class="btn btn-info"
+                                onclick="startWebcam();"
+                            >
+                                Start WebCam
+                            </button>
+                        </div>
+                        <div class="col">
+                            <button
+                                class="btn btn-success"
+                                onclick="snapshot();"
+                            >
+                                Take Snapshot
+                            </button>
+                        </div>
+                    </div>
+                    <video
+=                       onclick="snapshot(this);"
+                        width="430"
+                        height="380"
+                        id="video"
+                        controls
+                        autoplay
+                    ></video>
+                    <hr>
+                    <p>
+                        <canvas id="myCanvas" width="400" height="350"></canvas>
+                    </p>
+                    <form action="/image" method="POST">
+                        <input type="hidden" name="img" id="screenshot" />
+                        <input class="btn-outline-success" type="submit" />
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="js/fullStack.js"></script>
+
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="/main.js"></script>
+    </body>
+</html>
